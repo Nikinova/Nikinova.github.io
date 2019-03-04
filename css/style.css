@@ -1,0 +1,303 @@
+/* Parallax scrolling based on Jonathan Nicol's tutorial @ f6design.com */
+
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+
+/* HTML5 display-role reset for older browsers */
+article, cite, blockquote, section, footer, header, nav, section {
+	display: block;
+}
+
+/* Page structure & Typography*/
+
+html { 
+	overflow-y: scroll; /* always force a scrollbar in non-IE */
+	}
+	
+body {
+	 background-image: url(../img/bg1.png), url(../img/bg2.png);
+  	background-position: left 0px top 300px, bottom 900px left 0px;
+	background-repeat: no-repeat;
+	margin: 0; padding: 0;
+	font-family: arial;
+	color: #ffffff;
+	font-size: 112.5%;
+	line-height: 1.4em;
+	text-align: center;
+	height: 6000px;
+	}
+
+
+#logo {
+	display: inline-block;
+	float: left;
+	padding: 0 10px 0 150px;
+}
+/* Navigation*/
+
+nav	{
+	z-index: 4;
+	position: fixed;
+	top: 0px;
+	background-color: #181818;
+	width: 100%;
+	}
+
+nav ul	{list-style-type: none;}
+
+nav ul li	{display: inline-block;}
+
+nav ul li a	{
+	color: #ffffff;
+	text-decoration: none;
+	padding: 0 20px;}
+	
+nav	ul li a:hover	{
+	color: #ee6557;
+}
+
+nav	ul li a.active {
+	color: #16a6b6;
+}
+	
+/* -------------------- PARALLAX CONTENT -------------------- */
+
+p {
+	font-size: 15px;
+	color: black;
+}
+
+h2 {
+	font-family: Abel, sans-serif;
+	font-size: 30px;
+	color: black;
+	padding: 0 0 30px;
+}
+
+section {
+	background-color: #393939;
+	padding: 0;
+	margin: 0;
+	height: 1000px;
+}
+
+.content {
+	width: 50%; 
+	margin: auto;
+	padding: 50px 0 600px;
+}
+
+#panel1 {
+	position: absolute;
+	background-image: url(../img/scene1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+}
+
+#panel2 {
+	position: absolute;
+	top: 1050px;
+	background-image: url(../img/scene2.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+}
+#panel3 {
+	position: absolute;
+	top: 2100px;
+	background-image: url(../img/scene3.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+}
+#panel4 {
+	position: absolute;
+	top: 3150px;
+	background-image: url(../img/scene4.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+}
+
+#panel5 {
+	position: absolute;
+	top: 4200px;
+	background-image: url(../img/scene5.jpg);
+	background-repeat: no-repeat; 
+	background-size: cover;
+	width: 100%;
+}
+
+#panel6 {
+	position: absolute;
+	top: 5250px;
+	background-image: url(../img/scene6.jpg);
+	background-repeat: no-repeat; 
+	background-size: cover;
+	width: 100%;
+}
+
+/* -------------------- AIR PUFF + ICONS-------------------- */
+.icons {
+	z-index: 1;
+	width: 100%;
+}
+
+#puff {
+	position: absolute;
+	top: 630px;
+	left: 560px;
+	animation: puff 2s linear forwards;
+}
+
+@keyframes puff {
+  0% {
+	  opacity: 0;
+  }
+
+	50% {
+	  opacity: 0;
+  }
+	
+	70% {
+	  opacity: 0;
+  }
+	
+  100% {
+	opacity: 1;
+  }
+}
+
+/* -------------------- BIKES + ANIMATIONS -------------------- */
+.parallax-bg2 {
+	z-index: 3;
+	position: absolute;
+	left: 30%;
+	top: 0;
+}
+
+ .bg2-1 {
+	position: absolute;
+	top: 400px;
+	/*animation: moveAcross 10s ease-in-out forwards; */
+}
+
+.bike {
+	position: absolute;
+	top: 450px;
+	left: 500px;
+	animation-iteration-count: 15;
+}
+
+@keyframes moveAcross {
+  0% {
+    left: -800px;
+  }
+	
+  100% {
+    left: 60%;
+	
+  }
+}
+
+.lock {
+	animation-iteration-count: 15;
+	position: absolute;
+	top: 500px;
+	z-index: 5;
+}
+
+.lock1 {
+	animation-iteration-count: 15;
+	position: absolute;
+	top: 650px;
+	left: 1100px;
+	z-index: 5;
+}
+
+.sign {
+	position: absolute;
+	margin: auto;
+	left: 150px;
+	top: 470px;
+}
+
+/* -------------------- EXPANDS -------------------- */
+.grow {
+  height: 150px;
+  width: 150px;
+  margin: 5px 1% 5px 1%;
+  display: inline-block;
+ vertical-align: top;
+  transition: height 0.5s;
+  -webkit-transition: height 0.5s;
+  text-align: center;
+  overflow: hidden;
+}
+.grow:hover {
+  height: 345px;
+}
+
+.grow_big {
+  height: 200px;
+  width: 200px;
+  margin: 5px 1% 5px 1%;
+  display: inline-block;
+ vertical-align: top;
+  transition: height 0.5s;
+  -webkit-transition: height 0.5s;
+  text-align: center;
+  overflow: hidden;
+}
+
+.grow_big:hover {
+  height: 445px;
+}
+
+/* -------------------- SUN + ANIMATION -------------------- */
+.sun2, .sun1, .sunmiddle {
+	z-index: 1;
+	position: absolute;
+	top: 20px;
+	left: 900px;
+	animation: spin 15s linear infinite;
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+
+/* -------------------- HANDS - SIGNALING -------------------- */
+.hands_left {
+	z-index: 2;
+	position: absolute;
+	top: 100px;
+	left: 50px;
+}
+
+.hands_right {
+	z-index: 2;
+	position: absolute;
+	top: 220px;
+	right: 50px;
+}
+
+/* -------------------- DELAYS -------------------- */
+.delay {
+	animation-delay: 2s;
+}
+
+.delay_1 {
+	animation-delay: 3s;
+}
+
+.delay_2 {
+	animation-delay: 4s;
+}
+
+.delay_3 {
+	animation-delay: 5s;
+}
